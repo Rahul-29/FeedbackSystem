@@ -1,0 +1,40 @@
+
+server:
+  port: 8098    #default port where the service will be started
+  servlet:
+    context-path: /
+eureka:         #tells about the Eureka server details and its refresh time
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/feedback?useSSL=false
+    username: root
+    password: password
+
+  application:
+    name: login-service   #current service name to be used by the eureka server
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+    platform: mysql
+    driver: com.mysql.jdbc.Driver
+management:
+  security:
+    enabled: false  #disable the spring security on the management endpoints like /env, /refresh etc.
+
+
+logging:
+  level:
+    com.example.loginservice: DEBUG
