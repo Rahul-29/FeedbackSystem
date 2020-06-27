@@ -1,0 +1,6 @@
+com\feedback\poc\controller\FeedbackController.class
+com\feedback\poc\domain\Rating.class
+com\feedback\poc\domain\Response.class
+com\feedback\poc\service\FeedbackService.class
+com\feedback\poc\Application.class
+com\feedback\poc\repository\RatingRepository.class
